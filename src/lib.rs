@@ -174,66 +174,80 @@ pub trait Word: Default + BitXor<Output = Self> + Debug + Copy {
 }
 
 impl Word for u32 {
+    #[inline]
     fn from_le_bytes(bytes: &[u8]) -> Self {
 	let mut input = [0; 4];
 	input.copy_from_slice(bytes);
 	u32::from_le_bytes(input)
     }
 
+    #[inline]
     fn copy_to_slice(self, data: &mut [u8]) {
 	let bytes = self.to_le_bytes();
 	data.copy_from_slice(&bytes);
     }
 
+    #[inline]
     fn from_usize(i: usize) -> Self {
 	i as u32
     }
 
+    #[inline]
     fn wrapping_add(self, rhs: Self) -> Self {
 	self.wrapping_add(rhs)
     }
 
+    #[inline]
     fn wrapping_sub(self, rhs: Self) -> Self {
 	self.wrapping_sub(rhs)
     }
 
+    #[inline]
     fn rotate_left(self, n: u32) -> Self {
 	self.rotate_left(n)
     }
 
+    #[inline]
     fn rotate_right(self, n: u32) -> Self {
 	self.rotate_right(n)
     }
 }
 
 impl Word for u64 {
+    #[inline]
     fn from_le_bytes(bytes: &[u8]) -> Self {
 	let mut input = [0; 8];
 	input.copy_from_slice(bytes);
 	Self::from_le_bytes(input)
     }
 
+    #[inline]
     fn copy_to_slice(self, data: &mut [u8]) {
 	let bytes = self.to_le_bytes();
 	data.copy_from_slice(&bytes);
     }
 
+    #[inline]
     fn from_usize(i: usize) -> Self {
 	i as Self
     }
 
+    #[inline]
     fn wrapping_add(self, rhs: Self) -> Self {
 	self.wrapping_add(rhs)
     }
 
+    #[inline]
     fn wrapping_sub(self, rhs: Self) -> Self {
 	self.wrapping_sub(rhs)
     }
 
+    #[inline]
     fn rotate_left(self, n: u32) -> Self {
 	self.rotate_left(n)
     }
 
+    #[inline]
     fn rotate_right(self, n: u32) -> Self {
 	self.rotate_right(n)
     }
