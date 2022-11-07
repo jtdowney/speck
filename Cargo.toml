@@ -4,7 +4,12 @@ version = "0.1.0"
 edition = "2021"
 
 [dev-dependencies]
+criterion = "0.4.0"
 getrandom = "0.2.8"
 hex = "0.4.3"
 serde = { version = "1.0.147", features = ["derive"] }
 toml = "0.5.9"
+
+[[bench]]
+name = "speck"
+harness = false
