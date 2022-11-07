@@ -1,0 +1,10 @@
+[package]
+name = "speck"
+version = "0.1.0"
+edition = "2021"
+
+[dev-dependencies]
+getrandom = "0.2.8"
+hex = "0.4.3"
+serde = { version = "1.0.147", features = ["derive"] }
+toml = "0.5.9"
